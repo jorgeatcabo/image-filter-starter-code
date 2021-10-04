@@ -36,9 +36,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       return res.status(500).send({error: 'Error'});
     }
   
-
-    
-    
   } );
 
 
