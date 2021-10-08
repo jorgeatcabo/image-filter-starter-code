@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import { requireAuth } from './controllers/auth.router';
+
 
 (async () => {
 
@@ -22,8 +24,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //    1. validate the image_url query
   //    2. call filterImageFromURL(image_url) to filter the image
 
-  app.get( "/filteredimage", async ( req, res ) => {
-
+  app.get( "/filteredimage", requireAuth, async ( req, res ) => {
     try{
       let {image_url} = req.query;
       if(!image_url){
@@ -36,6 +37,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       return res.status(500).send({error: 'Error'});
     }
   
+    
   } );
 
 
