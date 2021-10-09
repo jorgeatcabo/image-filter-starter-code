@@ -4,7 +4,7 @@ import { Router, Request, Response } from 'express';
 import * as jwt from 'jsonwebtoken';
 import { NextFunction } from 'connect';
 
-import { config } from '../config/config';
+import { config } from './config';
 
 const router: Router = Router();
 
@@ -24,6 +24,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
     
     const token = token_bearer[1];
     return jwt.verify(token, config.jwt.secret, (err, decoded) => {
+      console.log(config.jwt.secret)
       if (err) {
         return res.status(500).send({ err:err, auth: false, message: 'Failed to authenticate.' });
       }
