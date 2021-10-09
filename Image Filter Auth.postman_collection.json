@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "17441406-9e3c-4d0c-8538-59adb011bbc3",
+		"name": "Image Filter Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET With Auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbl9sdWNhczIwMDVAeWFob28uY29tIiwicGFzc3dvcmRfaGFzaCI6IiQyYiQxMCRzT09lTlJwQXFWRnNsVzJUQzYvQ0FlTEkuaFF0bU5PNWFYRE5Dd2JSQ0VvTE5oY3hvdHUwVyIsImNyZWF0ZWRBdCI6IjIwMjEtMDktMjlUMjM6MzA6MDcuODgxWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDktMjlUMjM6MzA6MDcuODgyWiIsImlhdCI6MTYzMzcyOTkxNH0.yteEhLXf2lhNnE58IHRjy5GLUBu5r4f28IuIhpPSqv8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://image-filter-jorge-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://c402277.ssl.cf1.rackcdn.com/photos/906/images/story_full_width/sumatran-tiger-circle_44312149.jpg?1345533208",
+					"protocol": "http",
+					"host": [
+						"image-filter-jorge-dev",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://c402277.ssl.cf1.rackcdn.com/photos/906/images/story_full_width/sumatran-tiger-circle_44312149.jpg?1345533208"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
